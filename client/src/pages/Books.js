@@ -51,9 +51,9 @@ class Books extends Component {
 
     const key = index;
     API.saveBook({
-      title: this.state.gbooks[key].volumeInfo.title,
-      authors:this.state.gbooks[key].volumeInfo.authors[0],
-      description: this.state.gbooks[key].volumeInfo.description,
+      title:this.state.gbooks[key].volumeInfo.title ,
+      authors:(typeof this.state.gbooks[key].volumeInfo.authors==="undefined" ? " " : this.state.gbooks[key].volumeInfo.authors[0]) ,
+      description:this.state.gbooks[key].volumeInfo.description,
       href:this.state.gbooks[key].volumeInfo.previewLink,
       thumbnail:this.state.gbooks[key].volumeInfo.imageLinks.smallThumbnail
     })
